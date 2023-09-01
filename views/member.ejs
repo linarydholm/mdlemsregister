@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medlem - <%= firstName %> <%= lastName %></title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+    <%- include('header.ejs') %>
+
+    <div class="container">
+        <div class="content">
+
+    <h1>Detaljer</h1>
+
+    <div class="member-top-content flex flex-row-column">
+        <div class="contact flex flex-col">
+                <h2>Kontaktuppgifter:</h2>
+                <p>Namn: <%= firstName %> <%= lastName %></p>
+                <p>Email: <%= email %></p>
+                <p>Telefon: <%= phone %></p>
+        </div>
+        <div class="date flex flex-col">
+            <h2>Tillträdesdag:</h2>
+            <p><%= time %></p>
+
+            <form method="POST" action="/member/<%= memberId %>/delete">
+                <input type="hidden" name="id" value="<%= memberId %>">
+                <button type="submit" class="btn rem-btn">Ta bort medlem</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="other flex flex-col">
+        <h2>Övrig information om medlem:</h2>
+        <p><%= message || 'Övrig information saknas.' %></p>
+    </div>
+
+    </div>
+    </div>
+
+    <%- include('footer.ejs') %>
+    
+</body>
+</html>

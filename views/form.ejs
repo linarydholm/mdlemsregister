@@ -1,0 +1,33 @@
+<form action="/create" method="POST">
+        <div class="flex flex-col">
+                <div class="flex flex-row-column">
+                        <div class="form-input flex flex-col">
+                                <label for="firstName">Förnamn<span class="required">*</span></label>
+                                <input type="text" id="firstName" name="firstName" placeholder="Ditt förnamn" required>
+                        </div>
+                        <div class="form-input flex flex-col">
+                                <label for="lastName">Efternamn<span class="required">*</span></label>
+                                <input type="text" id="lastName" name="lastName" placeholder="Ditt efternamn" required>
+                        </div>
+                </div>
+                <div class="flex flex-row-column">
+                        <div class="form-input flex flex-col">
+                                <label for="email">Email<span class="required">*</span></label>
+                                <input type="email" id="email" name="email" placeholder="Din e-post" required>
+                        </div>
+                        <div class="form-input flex flex-col">
+                                <label for="phone">Telefonnummer (10 siffror)<span class="required">*</span></label>
+                                <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="Ange 10 siffror" required>
+                        </div>
+                </div>
+                        <div class="form-input flex flex-col">
+                                <label for="time">Tillträdesdag<span class="required">*</span></label>
+                                <input type="date" id="time" name="time" required>
+                        </div>
+                        <div class="form-input flex flex-col">
+                                <label for="message">Övrig information om medlem:</label>
+                                <textarea type="text" id="message" name="message" rows="4" cols="10"></textarea>
+                        </div>
+                <button class="btn add-btn">Lägg till medlem</button>
+        </div>
+</form>
